@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
-	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&Locale=en-US&Keyboard=00000409&GeoLocation=244&ProcessorArchitecture=amd64&ComputerNameMode=Script&ComputerNameScript=return+Read-Host+-Prompt+%27Enter+computer+name%27%3B&CompactOsMode=Default&TimeZoneMode=Explicit&TimeZone=Central+Standard+Time&PartitionMode=Interactive&DiskAssertionMode=Skip&WindowsEditionMode=Firmware&InstallFromMode=Automatic&PEMode=Default&UserAccountMode=Unattended&AccountName0=backd&AccountDisplayName0=backd&AccountPassword0=Luv3mYB%40byAwF&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=Hidden&ShowFileExtensions=true&LaunchToThisPC=true&ShowEndTask=true&TaskbarSearch=Hide&TaskbarIconsMode=Default&DisableWidgets=true&LeftTaskbar=true&HideTaskViewButton=true&ShowAllTrayIcons=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&EnableLongPaths=true&AllowPowerShellScripts=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DeleteWindowsOld=true&EffectsMode=Default&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Default&StartFoldersMode=Default&WifiMode=Skip&ExpressSettings=DisableAll&LockKeysMode=Configure&CapsLockInitial=Off&CapsLockBehavior=Toggle&NumLockInitial=On&NumLockBehavior=Toggle&ScrollLockInitial=Off&ScrollLockBehavior=Toggle&StickyKeysMode=Disabled&ColorMode=Custom&SystemColorTheme=Dark&AppsColorTheme=Dark&AccentColor=%230078d4&WallpaperMode=Solid&WallpaperColor=%23000000&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGetHelp=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMediaFeatures=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOneSync=true&RemoveOutlook=true&RemovePeople=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveSkype=true&RemoveSolitaire=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveFaxAndScan=true&RemoveXboxApps=true&RemoveYourPhone=true&FirstLogonScript1=%24UninstallPackages+%3D+%40%28%0D%0A++++%22AD2F1837.HPJumpStarts%22%0D%0A++++%22AD2F1837.HPPCHardwareDiagnosticsWindows%22%0D%0A++++%22AD2F1837.HPPowerManager%22%0D%0A++++%22AD2F1837.HPPrivacySettings%22%0D%0A++++%22AD2F1837.HPSupportAssistant%22%0D%0A++++%22AD2F1837.HPSureShieldAI%22%0D%0A++++%22AD2F1837.HPSystemInformation%22%0D%0A++++%22AD2F1837.HPQuickDrop%22%0D%0A++++%22AD2F1837.HPWorkWell%22%0D%0A++++%22AD2F1837.myHP%22%0D%0A++++%22AD2F1837.HPDesktopSupportUtilities%22%0D%0A++++%22AD2F1837.HPQuickTouch%22%0D%0A++++%22AD2F1837.HPEasyClean%22%0D%0A++++%22AD2F1837.HPSystemInformation%22%0D%0A%29%0D%0A%0D%0A%23+List+of+programs+to+uninstall%0D%0A%24UninstallPrograms+%3D+%40%28%0D%0A++++%22HP+Client+Security+Manager%22%0D%0A++++%22HP+Connection+Optimizer%22%0D%0A++++%22HP+Documentation%22%0D%0A++++%22HP+MAC+Address+Manager%22%0D%0A++++%22HP+Notifications%22%0D%0A++++%22HP+Security+Update+Service%22%0D%0A++++%22HP+System+Default+Settings%22%0D%0A++++%22HP+Sure+Click%22%0D%0A++++%22HP+Sure+Click+Security+Browser%22%0D%0A++++%22HP+Sure+Run%22%0D%0A++++%22HP+Sure+Recover%22%0D%0A++++%22HP+Sure+Sense%22%0D%0A++++%22HP+Sure+Sense+Installer%22%0D%0A++++%22HP+Wolf+Security%22%0D%0A++++%22HP+Wolf+Security+Application+Support+for+Sure+Sense%22%0D%0A++++%22HP+Wolf+Security+Application+Support+for+Windows%22%0D%0A%29%0D%0A%0D%0A%24HPidentifier+%3D+%22AD2F1837%22%0D%0A%0D%0A%24InstalledPackages+%3D+Get-AppxPackage+-AllUsers+%60%0D%0A++++++++++++%7C+Where-Object+%7B%28%24UninstallPackages+-contains+%24_.Name%29+-or+%28%24_.Name+-match+%22%5E%24HPidentifier%22%29%7D%0D%0A%0D%0A%24ProvisionedPackages+%3D+Get-AppxProvisionedPackage+-Online+%60%0D%0A++++++++++++%7C+Where-Object+%7B%28%24UninstallPackages+-contains+%24_.DisplayName%29+-or+%28%24_.DisplayName+-match+%22%5E%24HPidentifier%22%29%7D%0D%0A%0D%0A%24InstalledPrograms+%3D+Get-Package+%7C+Where-Object+%7B%24UninstallPrograms+-contains+%24_.Name%7D%0D%0A%0D%0A%23+Remove+appx+provisioned+packages+-+AppxProvisionedPackage%0D%0AForEach+%28%24ProvPackage+in+%24ProvisionedPackages%29+%7B%0D%0A%0D%0A++++Write-Host+-Object+%22Attempting+to+remove+provisioned+package%3A+%5B%24%28%24ProvPackage.DisplayName%29%5D...%22%0D%0A%0D%0A++++Try+%7B%0D%0A++++++++%24Null+%3D+Remove-AppxProvisionedPackage+-PackageName+%24ProvPackage.PackageName+-Online+-ErrorAction+Stop%0D%0A++++++++Write-Host+-Object+%22Successfully+removed+provisioned+package%3A+%5B%24%28%24ProvPackage.DisplayName%29%5D%22%0D%0A++++%7D%0D%0A++++Catch+%7BWrite-Warning+-Message+%22Failed+to+remove+provisioned+package%3A+%5B%24%28%24ProvPackage.DisplayName%29%5D%22%7D%0D%0A%7D%0D%0A%0D%0A%23+Remove+appx+packages+-+AppxPackage%0D%0AForEach+%28%24AppxPackage+in+%24InstalledPackages%29+%7B%0D%0A++++++++++++++++++++++++++++++++++++++++++++%0D%0A++++Write-Host+-Object+%22Attempting+to+remove+Appx+package%3A+%5B%24%28%24AppxPackage.Name%29%5D...%22%0D%0A%0D%0A++++Try+%7B%0D%0A++++++++%24Null+%3D+Remove-AppxPackage+-Package+%24AppxPackage.PackageFullName+-AllUsers+-ErrorAction+Stop%0D%0A++++++++Write-Host+-Object+%22Successfully+removed+Appx+package%3A+%5B%24%28%24AppxPackage.Name%29%5D%22%0D%0A++++%7D%0D%0A++++Catch+%7BWrite-Warning+-Message+%22Failed+to+remove+Appx+package%3A+%5B%24%28%24AppxPackage.Name%29%5D%22%7D%0D%0A%7D%0D%0A%0D%0A%23+Remove+installed+programs%0D%0A%24InstalledPrograms+%7C+ForEach-Object+%7B%0D%0A%0D%0A++++Write-Host+-Object+%22Attempting+to+uninstall%3A+%5B%24%28%24_.Name%29%5D...%22%0D%0A%0D%0A++++Try+%7B%0D%0A++++++++%24Null+%3D+%24_+%7C+Uninstall-Package+-AllVersions+-Force+-ErrorAction+Stop%0D%0A++++++++Write-Host+-Object+%22Successfully+uninstalled%3A+%5B%24%28%24_.Name%29%5D%22%0D%0A++++%7D%0D%0A++++Catch+%7BWrite-Warning+-Message+%22Failed+to+uninstall%3A+%5B%24%28%24_.Name%29%5D%22%7D%0D%0A%7D%0D%0A%0D%0A%23+Fallback+attempt+1+to+remove+HP+Wolf+Security+using+msiexec%0D%0ATry+%7B%0D%0A++++MsiExec+%2Fx+%22%7B0E2E04B0-9EDD-11EB-B38C-10604B96B11E%7D%22+%2Fqn+%2Fnorestart%0D%0A++++Write-Host+-Object+%22Fallback+to+MSI+uninistall+for+HP+Wolf+Security+initiated%22%0D%0A%7D%0D%0ACatch+%7B%0D%0A++++Write-Warning+-Object+%22Failed+to+uninstall+HP+Wolf+Security+using+MSI+-+Error+message%3A+%24%28%24_.Exception.Message%29%22%0D%0A%7D%0D%0A%0D%0A%23+Fallback+attempt+2+to+remove+HP+Wolf+Security+using+msiexec%0D%0ATry+%7B%0D%0A++++MsiExec+%2Fx+%22%7B4DA839F0-72CF-11EC-B247-3863BB3CB5A8%7D%22+%2Fqn+%2Fnorestart%0D%0A++++Write-Host+-Object+%22Fallback+to+MSI+uninistall+for+HP+Wolf+2+Security+initiated%22%0D%0A%7D%0D%0ACatch+%7B%0D%0A++++Write-Warning+-Object++%22Failed+to+uninstall+HP+Wolf+Security+2+using+MSI+-+Error+message%3A+%24%28%24_.Exception.Message%29%22%0D%0A%7D%0D%0A%0D%0A%23+Uncomment+this+section+to+see+what+is+left+behind%0D%0AWrite-Host+%22Checking+stuff+after+running+script%22%0D%0AWrite-Host+%22For+Get-AppxPackage+-AllUsers%22%0D%0AGet-AppxPackage+-AllUsers+%7C+where+%7B%24_.Name+-like+%22*HP*%22%7D%0D%0AWrite-Host+%22For+Get-AppxProvisionedPackage+-Online%22%0D%0AGet-AppxProvisionedPackage+-Online+%7C+where+%7B%24_.DisplayName+-like+%22*HP*%22%7D%0D%0AWrite-Host+%22For+Get-Package%22%0D%0AGet-Package+%7C+select+Name%2C+FastPackageReference%2C+ProviderName%2C+Summary+%7C+Where+%7B%24_.Name+-like+%22*HP*%22%7D+%7C+Format-List&FirstLogonScriptType1=Ps1&RestartExplorer=true&WdacMode=Skip&AppLockerMode=Skip-->
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&Locale=en-US&Keyboard=00000409&GeoLocation=244&ProcessorArchitecture=amd64&ComputerNameMode=Script&ComputerNameScript=return+Read-Host+-Prompt+%27Enter+computer+name%27%3B&CompactOsMode=Default&TimeZoneMode=Explicit&TimeZone=Central+Standard+Time&PartitionMode=Interactive&DiskAssertionMode=Skip&WindowsEditionMode=Firmware&InstallFromMode=Automatic&PEMode=Default&UserAccountMode=Unattended&AccountName0=backd&AccountDisplayName0=backd&AccountPassword0=Luv3mYB%40byAwF&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=Hidden&ShowFileExtensions=true&LaunchToThisPC=true&ShowEndTask=true&TaskbarSearch=Hide&TaskbarIconsMode=Default&DisableWidgets=true&LeftTaskbar=true&HideTaskViewButton=true&ShowAllTrayIcons=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&EnableLongPaths=true&AllowPowerShellScripts=true&DisableAppSuggestions=true&PreventDeviceEncryption=true&HideEdgeFre=true&DeleteWindowsOld=true&EffectsMode=Default&DeleteEdgeDesktopIcon=true&DesktopIconsMode=Default&StartFoldersMode=Default&WifiMode=Skip&ExpressSettings=DisableAll&LockKeysMode=Configure&CapsLockInitial=Off&CapsLockBehavior=Toggle&NumLockInitial=On&NumLockBehavior=Toggle&ScrollLockInitial=Off&ScrollLockBehavior=Toggle&StickyKeysMode=Disabled&ColorMode=Custom&SystemColorTheme=Dark&AppsColorTheme=Dark&AccentColor=%230078d4&WallpaperMode=Solid&WallpaperColor=%23000000&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveFeedbackHub=true&RemoveGetHelp=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMediaFeatures=true&RemoveMixedReality=true&RemoveZuneVideo=true&RemoveNews=true&RemoveOffice365=true&RemoveOneDrive=true&RemoveOneNote=true&RemoveOneSync=true&RemoveOutlook=true&RemovePeople=true&RemoveQuickAssist=true&RemoveRecall=true&RemoveSkype=true&RemoveSolitaire=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&RemoveFaxAndScan=true&RemoveXboxApps=true&RemoveYourPhone=true&RestartExplorer=true&WdacMode=Skip&AppLockerMode=Skip-->
 	<settings pass="offlineServicing"></settings>
 	<settings pass="windowsPE">
 		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
@@ -515,117 +515,6 @@ function Set-WallpaperImage {
 }
 Set-WallpaperColor -HtmlColor '#000000';
 		</File>
-		<File path="C:\Windows\Setup\Scripts\unattend-01.ps1">
-$UninstallPackages = @(
-    "AD2F1837.HPJumpStarts"
-    "AD2F1837.HPPCHardwareDiagnosticsWindows"
-    "AD2F1837.HPPowerManager"
-    "AD2F1837.HPPrivacySettings"
-    "AD2F1837.HPSupportAssistant"
-    "AD2F1837.HPSureShieldAI"
-    "AD2F1837.HPSystemInformation"
-    "AD2F1837.HPQuickDrop"
-    "AD2F1837.HPWorkWell"
-    "AD2F1837.myHP"
-    "AD2F1837.HPDesktopSupportUtilities"
-    "AD2F1837.HPQuickTouch"
-    "AD2F1837.HPEasyClean"
-    "AD2F1837.HPSystemInformation"
-)
-
-# List of programs to uninstall
-$UninstallPrograms = @(
-    "HP Client Security Manager"
-    "HP Connection Optimizer"
-    "HP Documentation"
-    "HP MAC Address Manager"
-    "HP Notifications"
-    "HP Security Update Service"
-    "HP System Default Settings"
-    "HP Sure Click"
-    "HP Sure Click Security Browser"
-    "HP Sure Run"
-    "HP Sure Recover"
-    "HP Sure Sense"
-    "HP Sure Sense Installer"
-    "HP Wolf Security"
-    "HP Wolf Security Application Support for Sure Sense"
-    "HP Wolf Security Application Support for Windows"
-)
-
-$HPidentifier = "AD2F1837"
-
-$InstalledPackages = Get-AppxPackage -AllUsers `
-            | Where-Object {($UninstallPackages -contains $_.Name) -or ($_.Name -match "^$HPidentifier")}
-
-$ProvisionedPackages = Get-AppxProvisionedPackage -Online `
-            | Where-Object {($UninstallPackages -contains $_.DisplayName) -or ($_.DisplayName -match "^$HPidentifier")}
-
-$InstalledPrograms = Get-Package | Where-Object {$UninstallPrograms -contains $_.Name}
-
-# Remove appx provisioned packages - AppxProvisionedPackage
-ForEach ($ProvPackage in $ProvisionedPackages) {
-
-    Write-Host -Object "Attempting to remove provisioned package: [$($ProvPackage.DisplayName)]..."
-
-    Try {
-        $Null = Remove-AppxProvisionedPackage -PackageName $ProvPackage.PackageName -Online -ErrorAction Stop
-        Write-Host -Object "Successfully removed provisioned package: [$($ProvPackage.DisplayName)]"
-    }
-    Catch {Write-Warning -Message "Failed to remove provisioned package: [$($ProvPackage.DisplayName)]"}
-}
-
-# Remove appx packages - AppxPackage
-ForEach ($AppxPackage in $InstalledPackages) {
-                                            
-    Write-Host -Object "Attempting to remove Appx package: [$($AppxPackage.Name)]..."
-
-    Try {
-        $Null = Remove-AppxPackage -Package $AppxPackage.PackageFullName -AllUsers -ErrorAction Stop
-        Write-Host -Object "Successfully removed Appx package: [$($AppxPackage.Name)]"
-    }
-    Catch {Write-Warning -Message "Failed to remove Appx package: [$($AppxPackage.Name)]"}
-}
-
-# Remove installed programs
-$InstalledPrograms | ForEach-Object {
-
-    Write-Host -Object "Attempting to uninstall: [$($_.Name)]..."
-
-    Try {
-        $Null = $_ | Uninstall-Package -AllVersions -Force -ErrorAction Stop
-        Write-Host -Object "Successfully uninstalled: [$($_.Name)]"
-    }
-    Catch {Write-Warning -Message "Failed to uninstall: [$($_.Name)]"}
-}
-
-# Fallback attempt 1 to remove HP Wolf Security using msiexec
-Try {
-    MsiExec /x "{0E2E04B0-9EDD-11EB-B38C-10604B96B11E}" /qn /norestart
-    Write-Host -Object "Fallback to MSI uninistall for HP Wolf Security initiated"
-}
-Catch {
-    Write-Warning -Object "Failed to uninstall HP Wolf Security using MSI - Error message: $($_.Exception.Message)"
-}
-
-# Fallback attempt 2 to remove HP Wolf Security using msiexec
-Try {
-    MsiExec /x "{4DA839F0-72CF-11EC-B247-3863BB3CB5A8}" /qn /norestart
-    Write-Host -Object "Fallback to MSI uninistall for HP Wolf 2 Security initiated"
-}
-Catch {
-    Write-Warning -Object  "Failed to uninstall HP Wolf Security 2 using MSI - Error message: $($_.Exception.Message)"
-}
-
-# Uncomment this section to see what is left behind
-Write-Host "Checking stuff after running script"
-Write-Host "For Get-AppxPackage -AllUsers"
-Get-AppxPackage -AllUsers | where {$_.Name -like "*HP*"}
-Write-Host "For Get-AppxProvisionedPackage -Online"
-Get-AppxProvisionedPackage -Online | where {$_.DisplayName -like "*HP*"}
-Write-Host "For Get-Package"
-Get-Package | select Name, FastPackageReference, ProviderName, Summary | Where {$_.Name -like "*HP*"} | Format-List
-		</File>
 		<File path="C:\Windows\Setup\Scripts\Specialize.ps1">
 $scripts = @(
 	{
@@ -859,9 +748,6 @@ $scripts = @(
 	};
 	{
 		cmd.exe /c "rmdir C:\Windows.old";
-	};
-	{
-		&amp; 'C:\Windows\Setup\Scripts\unattend-01.ps1';
 	};
 	{
 		Remove-Item -LiteralPath @(
